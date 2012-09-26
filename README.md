@@ -1,13 +1,13 @@
 ## Whitespace
 
- * Tabs, not spaces.
+ * Spaces, not tabs.
  * End files with a newline.
 
 ## Documentation
 
  * All method declarations should be documented.
  * Comments should be hard-wrapped at 80 characters.
- * Comments should be [Tomdoc](http://tomdoc.org/)-style.
+ * Comments should be [Doxygen](http://www.stack.nl/~dimitri/doxygen/docblocks.html)-style.
  * Use `#pragma mark`s to categorize methods and protocol implementations.
 
 ## Properties and Instance Variables
@@ -25,20 +25,26 @@
 
  * Comparisons should be explicit for everything except `BOOL`s.
  * Prefer positive comparisons to negative.
- * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies without an `else` should be on the same line as the `if`. 
- * All curly braces should begin on the same line as their associated statement. They should end on a new line.
+ * Always surround `if` bodies with curly braces if there is an `else`. Single-line `if` bodies should be avoided. 
+ * All curly braces should begin on the next line as their associated statement, except for blocks. They should end on a new line.
  * Put a single space after keywords and before their parentheses.
  * Return and break early.
  * No spaces between parentheses and their contents.
 
 ```objc
-if (something == nil) {
-	// do stuff
-} else {
-	// do other stuff
+if (something == nil)
+{
+    // do stuff
+}
+else
+{
+    // do other stuff
 }
 
-if (shitIsBad) return;
+if (shitIsBad)
+{
+    return;
+}
 ```
 
 ## Blocks
@@ -59,13 +65,13 @@ id (^blockName2)(id) = ^ id (id argsBitches) {
 
 ## Literals
 
- * The contents of array and dictionary literals should have a space on both sides.
- * Dictionary literals should have no space between the key and the colon, and a single space between colon and value.
+ * The contents of array and dictionary literals should have no space on both sides.
+ * Dictionary literals should have a space between the key and the colon, the colon and the value.
 
 ``` objc
-NSArray *theShit = @[ @1, @2, @3 ];
+NSArray *theShit = @[@1, @2, @3];
 
-NSDictionary *keyedShit = @{ GHDidCreateStyleGuide: @YES };
+NSDictionary *keyedShit = @{GHDidCreateStyleGuide : @YES};
 ```
 
 ## Categories
